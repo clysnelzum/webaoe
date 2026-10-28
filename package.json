@@ -1,0 +1,15 @@
+{
+  "name": "webaoe",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "dev": "node scripts/serve-boxedwine.mjs",
+    "smoke:browser": "node scripts/smoke-browser.mjs",
+    "smoke:notepad": "node scripts/smoke-notepad.mjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.1"
+  }
+}

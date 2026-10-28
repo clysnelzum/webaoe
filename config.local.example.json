@@ -1,0 +1,6 @@
+{
+  "note": "Referencia manual: los scripts usan argumentos CLI, no leen este JSON automáticamente. Guardá rutas privadas solo en config.local.json, que está ignorado.",
+  "workDirectory": "/ruta/externa/webaoe-work",
+  "chromeExecutable": "/ruta/al/navegador/chrome",
+  "gameExecutable": "/ruta/privada/Age of Empires II/age2_x1/age2_x1.exe"
+}
