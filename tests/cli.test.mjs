@@ -22,6 +22,10 @@ test('browser diagnostic requires an explicit URL', () => {
 test('browser diagnostic refuses a remote origin before launching Chrome', () => {
   rejects('smoke-browser.mjs', ['--url', 'https://example.com/'], /loopback URLs/);
 });
+test('browser diagnostic rejects malformed click coordinates before launching Chrome', () => {
+  rejects('smoke-browser.mjs', ['--url', 'http://127.0.0.1/', '--click', '10:no:2'], /Click must be/);
+  rejects('smoke-browser.mjs', ['--url', 'http://127.0.0.1/', '--click', '10:2'], /Click must be/);
+});
 test('Notepad interaction refuses a misleading localhost hostname', () => {
   rejects('smoke-notepad.mjs', ['--url', 'https://localhost.example.com/'], /Loopback URL required/);
 });

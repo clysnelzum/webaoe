@@ -1,5 +1,13 @@
 # Progreso
 
+## 2026-10-29 UTC
+
+- Se completó comparación Wine 6, usando su propio registro y estado de primera ejecución existente. Sin modificar el ejecutable, se alcanzaron menú original, submenú Un jugador y configuración de partida al cambiar escritorio a `bpp=8`. En 32 bpp, con y sin traza, persistió pantalla negra.
+- Paleta incorrecta. La secuencia tardía alcanzó «Iniciando una nueva partida», sin mapa antes del cierre; no se declara gameplay ni bloqueo permanente.
+- Se conservaron intentos inválidos: overlay ausente/404, y clics antes del menú que terminaron saliendo. No interpretarlos como fallos del juego.
+- Arnés ampliado con clics temporizados y registro de acciones; 7 pruebas CLI pasan. Informe 10 y manifiesto de hashes de reportes/capturas agregados. Hash del juego recalculado sin cambios.
+- Próxima tarea: sesión inspeccionable con diagnóstico selectivo de carga y probe de paleta. No avanzar a red sin mapa/escarmuza verificados.
+
 ## 2026-10-28 UTC
 
 - Revisados estructura del repositorio, notas, logs y checkout externo existente; se conservaron los cambios preexistentes sin commit.

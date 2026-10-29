@@ -1,0 +1,202 @@
+[
+  {
+    "id": "aoe2-wine6-gdi-comparison",
+    "startedAt": "2026-10-29T00:59:51.984Z",
+    "finishedAt": "2026-10-29T01:05:01.552Z",
+    "harnessCompleted": true,
+    "launchObserved": false,
+    "overlayLoadFailed": true,
+    "frameSamples": 58,
+    "distinctFrames": 1,
+    "actions": [],
+    "reportSHA256": "5eb2fe943b60db9f5b1e64f825bed8bdaec738802a277c6adbd7140fd41efbf9",
+    "screenSHA256": "4262bd3f64f281dfc8680f2c481cb7861b1e0a8274cc533f22de39421a484283"
+  },
+  {
+    "id": "aoe2-wine6-gdi-comparison-v2",
+    "startedAt": "2026-10-29T01:54:58.897Z",
+    "finishedAt": "2026-10-29T01:59:03.889Z",
+    "harnessCompleted": true,
+    "launchObserved": true,
+    "overlayLoadFailed": false,
+    "frameSamples": 43,
+    "distinctFrames": 3,
+    "actions": [],
+    "reportSHA256": "42726ac7a279516a4143d9b5c918bef400bb0b3387387158bf5d69fed43db24d",
+    "screenSHA256": "7d5614f5dd0692d1473c473fb3b4d8315e402c3be6b8f6d0f54ea320b8848812"
+  },
+  {
+    "id": "aoe2-wine6-no-trace",
+    "startedAt": "2026-10-29T01:59:27.988Z",
+    "finishedAt": "2026-10-29T02:03:43.044Z",
+    "harnessCompleted": true,
+    "launchObserved": true,
+    "overlayLoadFailed": false,
+    "frameSamples": 40,
+    "distinctFrames": 3,
+    "actions": [],
+    "reportSHA256": "e9ea5060db6695d97d729657f60c55d8ddbecadfe3cfeb0bc28eb855343ef970",
+    "screenSHA256": "6327c1eb854c8a86dda210781b657324a3dbee87481ba5595de39fa12e8f86a3"
+  },
+  {
+    "id": "aoe2-wine6-bpp8",
+    "startedAt": "2026-10-29T02:04:38.576Z",
+    "finishedAt": "2026-10-29T02:07:47.085Z",
+    "harnessCompleted": true,
+    "launchObserved": true,
+    "overlayLoadFailed": false,
+    "frameSamples": 32,
+    "distinctFrames": 4,
+    "actions": [],
+    "reportSHA256": "cfb00f000ddf52fd7bfb0a90d717400adcf122b4e7032bc8e47d330d8b396951",
+    "screenSHA256": "18422a863f0883698cb453346832d1ad6d1f3d4b27f7ffeebe2d386fb5e8df9a"
+  },
+  {
+    "id": "aoe2-wine6-bpp8-input",
+    "startedAt": "2026-10-29T02:08:28.820Z",
+    "finishedAt": "2026-10-29T02:12:03.846Z",
+    "harnessCompleted": true,
+    "launchObserved": true,
+    "overlayLoadFailed": false,
+    "frameSamples": 38,
+    "distinctFrames": 6,
+    "actions": [
+      {
+        "at": "2026-10-29T02:11:06.367Z",
+        "type": "click",
+        "x": 370,
+        "y": 28
+      }
+    ],
+    "reportSHA256": "73ae3afc13d2ebed5d0815ed39ac7f0d7fe52e82e45d3fba486a8d23fb3287b6",
+    "screenSHA256": "52c6888ae40daae4639dc31d61f66d05203bf8f6549938f77b62fbd2398fc30c"
+  },
+  {
+    "id": "aoe2-wine6-standard",
+    "startedAt": "2026-10-29T02:12:21.715Z",
+    "finishedAt": "2026-10-29T02:16:30.245Z",
+    "harnessCompleted": true,
+    "launchObserved": true,
+    "overlayLoadFailed": false,
+    "frameSamples": 43,
+    "distinctFrames": 7,
+    "actions": [
+      {
+        "at": "2026-10-29T02:14:36.052Z",
+        "type": "click",
+        "x": 370,
+        "y": 28
+      },
+      {
+        "at": "2026-10-29T02:15:10.506Z",
+        "type": "click",
+        "x": 600,
+        "y": 173
+      }
+    ],
+    "reportSHA256": "6bd573ca77df3509b39147c58b3915baf2416de9d34052cd64b0df96ed03095f",
+    "screenSHA256": "7e318bf5adc693aefa1217125a3baac6d931404d09b4a701f3fa7508957e8f9b"
+  },
+  {
+    "id": "aoe2-wine6-start",
+    "startedAt": "2026-10-29T02:16:49.083Z",
+    "finishedAt": "2026-10-29T02:23:54.346Z",
+    "harnessCompleted": true,
+    "launchObserved": true,
+    "overlayLoadFailed": false,
+    "frameSamples": 71,
+    "distinctFrames": 9,
+    "actions": [
+      {
+        "at": "2026-10-29T02:19:03.848Z",
+        "type": "click",
+        "x": 370,
+        "y": 28
+      },
+      {
+        "at": "2026-10-29T02:19:31.956Z",
+        "type": "click",
+        "x": 600,
+        "y": 173
+      },
+      {
+        "at": "2026-10-29T02:20:23.431Z",
+        "type": "click",
+        "x": 120,
+        "y": 570
+      }
+    ],
+    "reportSHA256": "39e20083f45bb407f7fcaf6d6a5ec46e5b646f69cc84b0ebde6ba87555351e13",
+    "screenSHA256": "f1a34c4ad664e959c297af6aaaffe7227669621764804ae0a8f619529e71bfd2"
+  },
+  {
+    "id": "aoe2-wine6-start-held",
+    "startedAt": "2026-10-29T02:24:31.119Z",
+    "finishedAt": "2026-10-29T02:30:34.746Z",
+    "harnessCompleted": true,
+    "launchObserved": true,
+    "overlayLoadFailed": false,
+    "frameSamples": 62,
+    "distinctFrames": 4,
+    "actions": [
+      {
+        "at": "2026-10-29T02:26:17.828Z",
+        "type": "click",
+        "x": 370,
+        "y": 28
+      },
+      {
+        "at": "2026-10-29T02:26:47.496Z",
+        "type": "click",
+        "x": 600,
+        "y": 173
+      },
+      {
+        "at": "2026-10-29T02:27:47.617Z",
+        "type": "click",
+        "x": 120,
+        "y": 570
+      },
+      {
+        "at": "2026-10-29T02:28:29.587Z",
+        "type": "click",
+        "x": 120,
+        "y": 570
+      }
+    ],
+    "reportSHA256": "3b544869cc26919a0511ea91a138183547ac3d88dc841dbe53ea85227a975338",
+    "screenSHA256": "12cb176f675c970bf12895fe7808535cde819947c25bb10c92a66611e0c7fde9"
+  },
+  {
+    "id": "aoe2-wine6-start-late",
+    "startedAt": "2026-10-29T02:31:30.499Z",
+    "finishedAt": "2026-10-29T02:40:35.341Z",
+    "harnessCompleted": true,
+    "launchObserved": true,
+    "overlayLoadFailed": false,
+    "frameSamples": 94,
+    "distinctFrames": 13,
+    "actions": [
+      {
+        "at": "2026-10-29T02:36:35.270Z",
+        "type": "click",
+        "x": 370,
+        "y": 28
+      },
+      {
+        "at": "2026-10-29T02:37:34.309Z",
+        "type": "click",
+        "x": 600,
+        "y": 173
+      },
+      {
+        "at": "2026-10-29T02:38:38.813Z",
+        "type": "click",
+        "x": 120,
+        "y": 570
+      }
+    ],
+    "reportSHA256": "914a3eef68431fb31bfee1114c5c10643424544e5427172ec64427670c3e2565",
+    "screenSHA256": "f02d92627f0278cdc2ac916a09e6aa84823103b32835f90989d954e9a6b76edf"
+  }
+]

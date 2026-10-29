@@ -11,7 +11,8 @@ fuentes y antecedentes en [docs/README.md](docs/README.md).
 
 - Boxedwine (intérprete) compilado localmente y probado en Chrome sobre un Q6600 sin Wasm SIMD.
 - Notepad de Wine 11: entrada de teclado, guardado y persistencia tras recargar verificados.
-- The Conquerors: primeros intentos de arranque realizados, **todavía sin llegar al menú**.
+- The Conquerors: **menú original, submenú y configuración de partida visibles** con Wine 6 / escritorio 8 bpp; paleta incorrecta. Se alcanzó la pantalla de carga, no el mapa.
+- Reproducción y límites: [prueba Wine 6 / 8 bpp](docs/research/10-wine6-bpp8.md).
 - Audio y multijugador del juego: pendientes.
 
 Ver [resultados y evidencia](docs/research/07-browser-validation.md).

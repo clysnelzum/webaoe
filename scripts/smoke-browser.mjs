@@ -10,6 +10,7 @@ const { values } = parseArgs({ options: {
   output: { type: 'string', default: 'artifacts/browser-smoke' },
   seconds: { type: 'string', default: '90' },
   'capture-progress': { type: 'boolean', default: false },
+  click: { type: 'string', multiple: true, default: [] }, // seconds:x:y, intrinsic canvas coordinates
 } });
 if (!values.url || !Number.isFinite(Number(values.seconds)) || Number(values.seconds) <= 0) {
   throw new Error('Usage: npm run smoke:browser -- --url http://127.0.0.1:8000/boxedwine.html?p=notepad --seconds 90');
@@ -18,9 +19,14 @@ const target = new URL(values.url);
 if (!['127.0.0.1', 'localhost', '[::1]'].includes(target.hostname)) {
   throw new Error('This diagnostic only accepts loopback URLs');
 }
+const clicks = values.click.map(value => {
+  const parts = value.split(':').map(Number);
+  if (parts.length !== 3 || parts.some(n => !Number.isFinite(n) || n < 0)) throw new Error('Click must be seconds:x:y (nonnegative numbers)');
+  return { seconds: parts[0], x: parts[1], y: parts[2], done: false };
+});
 const output = resolve(values.output);
 await mkdir(output, { recursive: true });
-const report = { startedAt: new Date().toISOString(), url: target.href, console: [], errors: [], requestsFailed: [], samples: [] };
+const report = { startedAt: new Date().toISOString(), url: target.href, console: [], errors: [], requestsFailed: [], samples: [], actions: [] };
 let browser;
 try {
   // Playwright creates an isolated temporary profile, never the user's Chrome profile.
@@ -42,9 +48,20 @@ try {
       wasmSIMD: WebAssembly.validate(simd),
       wasmSuspending: typeof WebAssembly.Suspending === 'function' };
   });
-  const deadline = Date.now() + Number(values.seconds) * 1000;
+  const started = Date.now();
+  const deadline = started + Number(values.seconds) * 1000;
   do {
     await page.waitForTimeout(Math.min(5000, Math.max(0, deadline - Date.now())));
+    for (const click of clicks) {
+      if (!click.done && Date.now() - started >= click.seconds * 1000) {
+        const canvas = page.locator('#canvas');
+        const dimensions = await canvas.evaluate(c => ({ width: c.width, height: c.height, clientWidth: c.clientWidth, clientHeight: c.clientHeight }));
+        if (click.x >= dimensions.width || click.y >= dimensions.height) throw new Error('Click outside canvas');
+        await canvas.click({ delay: 200, position: { x: click.x * dimensions.clientWidth / dimensions.width, y: click.y * dimensions.clientHeight / dimensions.height } });
+        click.done = true;
+        report.actions.push({ at: new Date().toISOString(), type: 'click', x: click.x, y: click.y });
+      }
+    }
     const sample = await page.evaluate(() => ({
       status: document.querySelector('#status')?.textContent,
       output: document.querySelector('#output')?.value?.slice(-12000),

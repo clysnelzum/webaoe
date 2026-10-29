@@ -18,11 +18,13 @@ Objetivo: ejecutar **Age of Empires II: The Conquerors clásico completo**, loca
 9. [Depuración de arranque y continuidad](research/08-startup-debugging-handoff.md).
 10. **[Revisión de estrategia: alternativas y fuentes específicas de AoE II](research/09-strategy-review.md).**
 
+11. **[Menú original y carga de partida con Wine 6 / escritorio 8 bpp](research/10-wine6-bpp8.md)** (2026-10-29): actualiza los resultados de pantalla negra anteriores.
+
 ## Estado más reciente
 
 - **Build propio del intérprete completado.**
 - **Notepad de Wine 11 funciona en Chrome en este Q6600 sin SIMD:** entrada, guardado y restauración tras recarga verificados.
-- **The Conquerors sigue sin menú verificado.** Tras trasladar el estado de primera ejecución del usuario, Wine 11 llega a DirectDraw 8bpp, pero muestra pantalla negra incluso con GDI (ver documento de continuidad).
+- **The Conquerors tiene menú, submenú y configuración de partida verificados con Wine 6 / escritorio 8 bpp.** La paleta es incorrecta; se alcanzó la pantalla de carga, no el mapa. Wine 11 continúa sin menú verificado (ver documentos 8 y 10).
 - Se pausaron los reintentos para revisar alternativas: Wine-Assembly, v64 y js-dos/DOSBox-X. Hay fuentes específicas de AoE II, pero ninguna alternativa está validada en este equipo (ver revisión de estrategia).
 - Audio y multijugador del juego siguen pendientes.
 - Hay comandos y evidencia en el documento 8. `npm run dev` sirve la prueba de Notepad por loopback; no la instalación del juego.

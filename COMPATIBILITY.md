@@ -1,6 +1,6 @@
 # Compatibilidad: The Conquerors original
 
-Actualizado: 2026-10-28 UTC. Resultado: **arranca parcialmente; menú no verificado**. No hay partida completa ni multijugador certificado.
+Actualizado: 2026-10-29 UTC. Resultado: **menú original y configuración de partida verificados con Wine 6 y escritorio 8 bpp; paleta incorrecta**. Se alcanzó «Iniciando una nueva partida», sin mapa verificado. No hay partida completa ni multijugador certificado. Evidencia y reproducción: [prueba Wine 6 / 8 bpp](docs/research/10-wine6-bpp8.md).
 
 ## Instalación examinada
 
@@ -17,7 +17,8 @@ Logs y capturas locales, ignorados por Git: `artifacts/aoe2-gdi-ddraw/report.jso
 | Función | Estado |
 | --- | --- |
 | Carga del ejecutable y actividad DirectDraw | Observadas; sin confirmar presentación correcta |
-| Menú, input del juego, gráficos completos | No verificados |
+| Menú y mouse en menús | Verificados visualmente con Wine 6 / bpp=8; submenú y configuración responden |
+| Gráficos completos | No: paleta incorrecta; mapa no verificado |
 | Audio, música, IA, campañas, editor, guardado del juego | No verificados |
 | DirectPlay, conexión, sincronización y partida entre computadoras | No verificados |
 | Rendimiento jugable | No medido |
@@ -32,4 +33,4 @@ El checkout `de6dd63aa66e673007fec6b90cc98256246fc762` se obtuvo en `D:/webaoe-w
 
 Para verificar ambos módulos en Chrome, se invocó directamente `watxSourceClosure`/`compileClosure` y la transformación `dispatch-trampoline` upstream, sin gates del build ni sección de layout; son **artefactos de diagnóstico, no builds certificados ni aptos para ejecutar**. Chrome headless 156 rechazó ambos con `WebAssembly.compile(): Wasm SIMD unsupported @+205`: tail SHA-256 `f3f3cd439c50a2bc441de67c5f138e32cc060186d84d37d85de2b200ca806d75`; compat SHA-256 `24dee19e4642778293e82560382f41970e3c00177a714780c00b245128fede6f`. Repetir la validación con `node scripts/check-runtime-capabilities.mjs --wasm D:/webaoe-work/runtime-review/berrry-tail.wasm --wasm D:/webaoe-work/runtime-review/berrry-compat.wasm --output artifacts/berrry-capabilities`. Reporte: `artifacts/berrry-capabilities/report.json`; generación: `D:/webaoe-work/logs/berrry-ungated-probe.log`. La variante compat elimina tail calls, no SIMD. Esto bloquea estas variantes en este equipo, no demuestra inviabilidad general ni ausencia de otro fallback.
 
-No se modificó el ejecutable ni se realizaron operaciones para eludir protección anticopia. No se repitió una espera idéntica de 180 s sin nueva instrumentación; los resultados del juego son históricos.
+No se modificó el ejecutable ni se realizaron operaciones para eludir protección anticopia. Se realizaron nuevas comparaciones Wine 6 / profundidad de escritorio, documentadas en el [informe 10](docs/research/10-wine6-bpp8.md). Los resultados de Wine 11 arriba son históricos.
